@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM-система</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Подключаем шапку сайта -->
+    <div id="header-placeholder"></div>
+    <script>
+      document.getElementById("header-placeholder").innerHTML = `
+        <header>
+          <nav>
+            <ul>
+              <li><a href="index.html">Главная</a></li>
+              <li><a href="patients.html">Пациенты</a></li>
+              <li><a href="appointments.html">Записи</a></li>
+              <li><a href="reports.html">Отчеты</a></li>
+              <li><a href="settings.html">Настройки</a></li>
+              <li><a href="login.html">Вход</a></li>
+            </ul>
+          </nav>
+        </header>
+      `;
+    </script>
+    
+
+    <!-- Основной контент страницы -->
+    <main>
+        <div class="container">
+            <h1>Добро пожаловать в CRM-систему для медицинского центра!</h1>
+            <p>Здесь вы можете управлять записями пациентов, вести учет и многое другое.</p>
+        </div>
+    </main>
+</body>
+
+</html>

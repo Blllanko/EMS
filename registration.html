@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Регистрация</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container auth-container">
+    <h1>Регистрация</h1>
+    <form class="auth-form">
+      <label for="fullname">ФИО:</label>
+      <input type="text" id="fullname" name="fullname" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="phone">Телефон:</label>
+      <input type="tel" id="phone" name="phone" required />
+
+      <label for="password">Пароль:</label>
+      <input type="password" id="password" name="password" required />
+
+      <label for="confirm-password">Повторите пароль:</label>
+      <input type="password" id="confirm-password" name="confirm-password" required />
+
+      <button type="submit" class="add-btn">Зарегистрироваться</button>
+    </form>
+
+    <p style="margin-top: 15px;">Уже есть аккаунт? <a href="login.html">Войти</a></p>
+  </div>
+  <script>
+    const form = document.querySelector(".auth-form");
+  
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+  
+      const fullName = document.getElementById("fullname").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("confirm-password").value;
+  
+      if (password !== confirmPassword) {
+        alert("Пароли не совпадают!");
+        return;
+      }
+  
+      // Сохраняем пользователя в localStorage (упрощённо)
+      const userData = {
+        fullName,
+        email,
+        phone,
+        password
+      };
+  
+      localStorage.setItem("crm_user", JSON.stringify(userData));
+      alert("Регистрация успешна!");
+  
+      // Перенаправление на login.html
+      window.location.href = "login.html";
+    });
+  </script>
+  
+</body>
+</html>

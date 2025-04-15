@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Вход</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container auth-container">
+    <h1>Вход</h1>
+    <form class="auth-form">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="password">Пароль:</label>
+      <input type="password" id="password" name="password" required />
+
+      <button type="submit" class="add-btn">Войти</button>
+    </form>
+
+    <p style="margin-top: 15px;">Нет аккаунта? <a href="registration.html">Зарегистрироваться</a></p>
+  </div>
+
+  <script>
+    const form = document.querySelector(".auth-form");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const emailInput = document.getElementById("email").value.trim();
+      const passwordInput = document.getElementById("password").value;
+
+      const savedUser = JSON.parse(localStorage.getItem("crm_user"));
+
+      if (
+        savedUser &&
+        savedUser.email === emailInput &&
+        savedUser.password === passwordInput
+      ) {
+        alert("Добро пожаловать, " + savedUser.fullName + "!");
+        // Можно сделать window.location.href = "dashboard.html"
+      } else {
+        alert("Неверный email или пароль.");
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Настройки - CRM-система</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Шапка сайта -->
+    <div id="header-placeholder"></div>
+    <script>
+      document.getElementById("header-placeholder").innerHTML = `
+        <header>
+          <nav>
+            <ul>
+              <li><a href="index.html">Главная</a></li>
+              <li><a href="patients.html">Пациенты</a></li>
+              <li><a href="appointments.html">Записи</a></li>
+              <li><a href="reports.html">Отчеты</a></li>
+              <li><a href="settings.html">Настройки</a></li>
+              <li><a href="login.html">Вход</a></li>
+            </ul>
+          </nav>
+        </header>
+      `;
+    </script>
+    
+
+    <main>
+        <div class="container">
+            <h1>Настройки</h1>
+            <p>Управляйте параметрами системы, уведомлениями и общими настройками клиники.</p>
+
+            <!-- 🔧 Общие настройки -->
+            <section class="settings-section">
+                <h2>Общие настройки</h2>
+                <form>
+                    <label for="clinic-name">Название клиники:</label>
+                    <input type="text" id="clinic-name" name="clinic-name" value="Медцентр">
+
+                    <label for="address">Адрес:</label>
+                    <input type="text" id="address" name="address" value="Москва, ул. Дубининская, 96">
+
+                    <label for="timezone">Часовой пояс:</label>
+                    <select id="timezone" name="timezone">
+                        <option value="msk">MSK (Москва)</option>
+                        <option value="gmt">GMT</option>
+                        <option value="utc">UTC</option>
+                    </select>
+                </form>
+            </section>
+
+            <!-- 🔔 Настройки уведомлений -->
+            <section class="settings-section">
+                <h2>Уведомления</h2>
+                <form>
+                    <label>
+                        <input type="checkbox" name="email-reminders" checked>
+                        Отправлять напоминания по Email
+                    </label>
+                    <label>
+                        <input type="checkbox" name="sms-reminders">
+                        Отправлять напоминания по SMS
+                    </label>
+                    <label>
+                        <input type="checkbox" name="weekly-summary" checked>
+                        Еженедельный отчет на Email
+                    </label>
+                </form>
+            </section>
+
+            <!-- 💾 Кнопка сохранить -->
+            <section>
+                <button type="submit" class="add-btn">Сохранить изменения</button>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 CRM-система для медицинского центра</p>
+    </footer>
+
+</body>
+</html>

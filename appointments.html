@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Записи на прием - CRM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 🔝 Шапка сайта -->
+    <div id="header-placeholder"></div>
+    <script>
+      document.getElementById("header-placeholder").innerHTML = `
+        <header>
+          <nav>
+            <ul>
+              <li><a href="index.html">Главная</a></li>
+              <li><a href="patients.html">Пациенты</a></li>
+              <li><a href="appointments.html">Записи</a></li>
+              <li><a href="reports.html">Отчеты</a></li>
+              <li><a href="settings.html">Настройки</a></li>
+              <li><a href="login.html">Вход</a></li>
+            </ul>
+          </nav>
+        </header>
+      `;
+    </script>
+    
+
+    <!-- 📅 Основной контент -->
+    <main>
+        <div class="container">
+            <h1>Записи на прием</h1>
+            <p>Просматривайте, редактируйте и добавляйте записи на приём к врачам.</p>
+
+            <!-- 📝 Форма новой записи -->
+            <section class="add-appointment">
+                <h2>Добавить запись</h2>
+                <form>
+                    <label for="patient">Пациент:</label>
+                    <input type="text" id="patient" name="patient" placeholder="Фамилия Имя" required>
+
+                    <label for="doctor">Врач:</label>
+                    <input type="text" id="doctor" name="doctor" placeholder="Например, Кардиолог" required>
+
+                    <label for="date">Дата приема:</label>
+                    <input type="date" id="date" name="date" required>
+
+                    <label for="status">Статус:</label>
+                    <select id="status" name="status">
+                        <option value="Ожидает">Ожидает</option>
+                        <option value="Подтверждено">Подтверждено</option>
+                        <option value="Отменено">Отменено</option>
+                    </select>
+
+                    <button type="submit">Создать запись</button>
+                </form>
+            </section>
+
+            <!-- 📋 Таблица с записями -->
+            <section class="appointments-list">
+                <h2>Существующие записи</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>Пациент</th>
+                            <th>Дата</th>
+                            <th>Врач</th>
+                            <th>Статус</th>
+                            <th>Действия</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Иванов Иван</td>
+                            <td>2025-04-25</td>
+                            <td>Кардиолог</td>
+                            <td>Подтверждено</td>
+                            <td><button>Редактировать</button> <button>Удалить</button></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Петрова Мария</td>
+                            <td>2025-04-26</td>
+                            <td>Терапевт</td>
+                            <td>Ожидает</td>
+                            <td><button>Подтвердить</button> <button>Удалить</button></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Сидоров Алексей</td>
+                            <td>2025-04-27</td>
+                            <td>Офтальмолог</td>
+                            <td>Подтверждено</td>
+                            <td><button>Редактировать</button> <button>Удалить</button></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Кузнецова Ольга</td>
+                            <td>2025-04-28</td>
+                            <td>Гинеколог</td>
+                            <td>Ожидает</td>
+                            <td><button>Подтвердить</button> <button>Удалить</button></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Морозов Никита</td>
+                            <td>2025-04-29</td>
+                            <td>Уролог</td>
+                            <td>Подтверждено</td>
+                            <td><button>Редактировать</button> <button>Удалить</button></td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Смирнова Елена</td>
+                            <td>2025-04-30</td>
+                            <td>Невролог</td>
+                            <td>Ожидает</td>
+                            <td><button>Подтвердить</button> <button>Удалить</button></td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Белов Максим</td>
+                            <td>2025-05-01</td>
+                            <td>Хирург</td>
+                            <td>Подтверждено</td>
+                            <td><button>Редактировать</button> <button>Удалить</button></td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Фролова Дарья</td>
+                            <td>2025-05-02</td>
+                            <td>Педиатр</td>
+                            <td>Ожидает</td>
+                            <td><button>Подтвердить</button> <button>Удалить</button></td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>Григорьев Павел</td>
+                            <td>2025-05-03</td>
+                            <td>Дерматолог</td>
+                            <td>Подтверждено</td>
+                            <td><button>Редактировать</button> <button>Удалить</button></td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>Васильева Наталья</td>
+                            <td>2025-05-04</td>
+                            <td>Эндокринолог</td>
+                            <td>Ожидает</td>
+                            <td><button>Подтвердить</button> <button>Удалить</button></td>
+                        </tr>
+                    </tbody>
+                    

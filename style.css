@@ -1,0 +1,278 @@
+* {
+    transition: all 0.3s ease;
+}
+section {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+    animation-delay: 0.1s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+button,
+.add-btn {
+    position: relative;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover,
+.add-btn:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+table tr {
+    animation: fadeRow 0.4s ease-in;
+}
+
+@keyframes fadeRow {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+input[type="checkbox"] {
+    transform: scale(1);
+    transition: transform 0.2s ease;
+}
+
+input[type="checkbox"]:hover {
+    transform: scale(1.1);
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F1F8F3; /* Светлый фон */
+    color: #333;
+}
+
+/* Навигационная панель */
+header {
+    background-color: #A8D08D; /* Пастельный зелёный */
+    padding: 15px 0;
+}
+
+header nav ul {
+    list-style: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+header nav ul li a:hover {
+    color: #f4fff4;
+    text-decoration: underline;
+}
+
+/* Контейнер */
+.container {
+    width: 85%;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+/* Заголовки */
+h1 {
+    font-size: 32px;
+    color: #4F6D7A;
+}
+
+h2 {
+    font-size: 24px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: #4F6D7A;
+}
+
+/* Формы */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+form label {
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #4F6D7A;
+}
+
+form input,
+form select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #c1d3d8;
+    border-radius: 6px;
+    background-color: #F9FCF9;
+}
+
+form input:focus,
+form select:focus {
+    border-color: #A8D08D;
+    outline: none;
+    box-shadow: 0 0 4px rgba(168, 208, 141, 0.6);
+}
+
+/* Кнопки */
+button,
+.add-btn {
+    background-color: #A8D08D;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover,
+.add-btn:hover {
+    background-color: #74A45C;
+}
+
+/* Таблицы */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+    text-align: left;
+}
+
+th {
+    background-color: #E7F9E1;
+    color: #4F6D7A;
+}
+
+td {
+    background-color: #FAFAFA;
+}
+
+td button {
+    margin-right: 5px;
+}
+
+/* Секции */
+section {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+/* Списки статистики */
+.statistics ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.statistics li {
+    padding: 6px 0;
+    font-size: 16px;
+}
+
+/* Чекбоксы */
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* Подвал */
+footer {
+    background-color: #A8D08D;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 14px;
+    margin-top: 40px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    header nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    table, th, td {
+        font-size: 14px;
+    }
+}
+.auth-container {
+    max-width: 450px;
+    margin: 60px auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.auth-form input {
+    padding: 10px 12px;
+    font-size: 15px;
+    border: 1px solid #cddfd2;
+    border-radius: 6px;
+    background-color: #f9fdf9;
+}
+
+.auth-form input:focus {
+    border-color: #A8D08D;
+    box-shadow: 0 0 6px rgba(168, 208, 141, 0.4);
+    outline: none;
+}
+
+.auth-form button {
+    margin-top: 10px;
+}
+.charts {
+    margin-top: 40px;
+}
+
+.chart-wrapper {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07);
+    text-align: center;
+}

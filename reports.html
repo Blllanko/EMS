@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отчеты - CRM-система</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <!-- Подключаем шапку -->
+    <div id="header-placeholder"></div>
+    <script>
+      document.getElementById("header-placeholder").innerHTML = `
+        <header>
+          <nav>
+            <ul>
+              <li><a href="index.html">Главная</a></li>
+              <li><a href="patients.html">Пациенты</a></li>
+              <li><a href="appointments.html">Записи</a></li>
+              <li><a href="reports.html">Отчеты</a></li>
+              <li><a href="settings.html">Настройки</a></li>
+              <li><a href="login.html">Вход</a></li>
+            </ul>
+          </nav>
+        </header>
+      `;
+    </script>
+    
+
+    <main>
+        <div class="container">
+            <h1>Отчеты</h1>
+            <p>Здесь отображается сводная информация по пациентам и приёмам. Данные можно использовать для анализа эффективности работы клиники.</p>
+            <section class="charts">
+                <h2>Графики</h2>
+              
+                <div class="chart-wrapper">
+                  <canvas id="statusChart" width="400" height="300"></canvas>
+                </div>
+              
+                <div class="chart-wrapper">
+                  <canvas id="doctorsChart" width="400" height="300"></canvas>
+                </div>
+              </section>
+              
+            <!-- 📊 Статистика -->
+            <section class="statistics">
+                <h2>Статистика на сегодня</h2>
+                <ul>
+                    <li><strong>Всего пациентов:</strong> 10</li>
+                    <li><strong>Всего записей на прием:</strong> 10</li>
+                    <li><strong>Подтвержденные записи:</strong> 5</li>
+                    <li><strong>Ожидающие подтверждения:</strong> 5</li>
+                </ul>
+            </section>
+
+            <!-- 📁 Таблица отчетов -->
+            <section class="report-table">
+                <h2>Журнал активности</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Дата</th>
+                            <th>Событие</th>
+                            <th>Описание</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2025-04-16</td>
+                            <td>Создан пациент</td>
+                            <td>Иванов Иван был добавлен в базу данных</td>
+                        </tr>
+                        <tr>
+                            <td>2025-04-16</td>
+                            <td>Запись на прием</td>
+                            <td>Петрова Мария записана к терапевту на 2025-04-26</td>
+                        </tr>
+                        <tr>
+                            <td>2025-04-17</td>
+                            <td>Подтверждение записи</td>
+                            <td>Сидоров Алексей — приём у офтальмолога подтверждён</td>
+                        </tr>
+                        <tr>
+                            <td>2025-04-17</td>
+                            <td>Создан пациент</td>
+                            <td>Фролова Дарья добавлена в систему</td>
+                        </tr>
+                        <tr>
+                            <td>2025-04-18</td>
+                            <td>Отмена записи</td>
+                            <td>Григорьев Павел отменил визит к дерматологу</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+        <script>
+            // Статистика записей
+            const statusChart = new Chart(document.getElementById("statusChart"), {
+              type: "doughnut",
+              data: {
+                labels: ["Подтверждено", "Ожидает"],
+                datasets: [{
+                  label: "Статусы записей",
+                  data: [5, 5], // можно заменить на динамические значения
+                  backgroundColor: ["#A8D08D", "#FFD966"],
+                  borderColor: "#ffffff",
+                  borderWidth: 2
+                }]
+              },
+              options: {
+                responsive: true,
+                plugins: {
+                  legend: {
+                    position: 'bottom'
+                  }
+                }
+              }
+            });
+          
+            // Записи по врачам
+            const doctorsChart = new Chart(document.getElementById("doctorsChart"), {
+              type: "bar",
+              data: {
+                labels: ["Кардиолог", "Терапевт", "Офтальмолог", "Гинеколог", "Невролог"],
+                datasets: [{
+                  label: "Кол-во записей",
+                  data: [2, 2, 1, 1, 1],
+                  backgroundColor: "#A8D08D",
+                  borderRadius: 6
+                }]
+              },
+              options: {
+                responsive: true,
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                    ticks: {
+                      stepSize: 1
+                    }
+                  }
+                }
+              }
+            });
+          </script>
+          
+    </main>
+
+    <footer>
+        <p>&copy; 2025 CRM-система для медицинского центра</p>
+    </footer>
+
+</body>
+</html>
